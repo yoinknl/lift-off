@@ -1,10 +1,10 @@
-package nl.yoinl.liftoff.puzzle;
+package nl.yoink.liftoff.puzzle;
 
-import static nl.yoinl.liftoff.assertions.Assert.assertEquals;
+import static nl.yoink.liftoff.assertions.Assert.assertEquals;
 
-import nl.yoinl.liftoff.elevator.Operator;
-import nl.yoinl.liftoff.model.Model.*;
-import nl.yoinl.liftoff.solutions.SecretSolutions;
+import nl.yoink.liftoff.elevator.Operator;
+import nl.yoink.liftoff.model.Model.*;
+import nl.yoink.liftoff.solutions.SecretSolutions;
 
 import java.util.List;
 

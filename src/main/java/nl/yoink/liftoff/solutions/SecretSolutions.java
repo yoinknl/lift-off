@@ -1,6 +1,6 @@
-package nl.yoinl.liftoff.solutions;
+package nl.yoink.liftoff.solutions;
 
-import nl.yoinl.liftoff.model.Model.*;
+import nl.yoink.liftoff.model.Model.*;
 
 import java.util.*;
 

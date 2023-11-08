@@ -1,4 +1,4 @@
-package nl.yoinl.liftoff.assertions;
+package nl.yoink.liftoff.assertions;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package nl.yoinl.liftoff.model;
+package nl.yoink.liftoff.model;
 
 import java.util.Arrays;
 import java.util.List;

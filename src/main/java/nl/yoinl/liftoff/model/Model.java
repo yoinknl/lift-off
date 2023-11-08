@@ -10,10 +10,14 @@ public final class Model {
 
     public enum Direction {
         UP,
-        DOWN
+        DOWN;
+
+        public Direction reverse() {
+            return this == UP ? DOWN : UP;
+        }
     }
 
-    public record Floor(int floor) {
+    public record Floor(int floor) implements Comparable<Floor> {
         public static Floor of(int floor) {
             return new Floor(floor);
         }
@@ -21,6 +25,11 @@ public final class Model {
         @Override
         public String toString() {
             return "Floor[" + floor + "]";
+        }
+
+        @Override
+        public int compareTo(Floor o) {
+            return Integer.compare(floor(), o.floor());
         }
     }
 

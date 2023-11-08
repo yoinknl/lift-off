@@ -11,3 +11,5 @@ The input consists of a list of `Call`s which the elevator's passengers can make
 The input also consists of the floor where the elevator starts (usually the ground floor, which is 0) and the number of floors in the building.
 
 Every level includes a solution implementation in the class `SecretSolutions`, but is formatted as a sequence of unicode escape sequences. This is valid Java code, but of course quite unreadable, so it won't give away the answer!
+
+The model classes have some convenience methods that you are encouraged to use, so it pays off to take a look at them. However, you should not modify these classes.

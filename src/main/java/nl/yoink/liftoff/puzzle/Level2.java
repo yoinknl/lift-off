@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class Level2 {
 
-    private static final Operator operator = new Operator() {
+    private static final Operator<Floor> operator = new Operator<>() {
         @Override
         public List<Floor> run(Input input) {
             // TODO: Remove call to hidden solution and implement this method

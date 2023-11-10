@@ -22,6 +22,14 @@ public final class Model {
             return new Floor(floor);
         }
 
+        public Floor above() {
+            return new Floor(floor + 1);
+        }
+
+        public Floor below() {
+            return new Floor(floor - 1);
+        }
+
         @Override
         public String toString() {
             return "Floor[" + floor + "]";
@@ -33,19 +41,40 @@ public final class Model {
         }
     }
 
-    public record Timestamp(int timestamp) {
+    public record Time(int boops) implements Comparable<Time> {
+        public static Time of(int boops) {
+            return new Time(boops);
+        }
+
+        public Time tick() {
+            return new Time(boops + 1);
+        }
+
+        public boolean isBefore(Time other) {
+            return boops < other.boops();
+        }
+
+        public boolean isAfter(Time other) {
+            return boops > other.boops();
+        }
+
         @Override
         public String toString() {
-            return "Timestamp[" + timestamp + "]";
+            return "Boop[" + boops + "]";
+        }
+
+        @Override
+        public int compareTo(Time o) {
+            return Integer.compare(boops(), o.boops());
         }
     }
 
-    public record Call(Direction direction, Floor from, Floor to, Timestamp time) {
+    public record Call(Direction direction, Floor from, Floor to, Time time) {
         public static Call of(Direction direction, Floor from, Floor to) {
             return new Call(direction, from, to, null);
         }
 
-        public static Call of(Direction direction, Floor from, Floor to, Timestamp time) {
+        public static Call of(Direction direction, Floor from, Floor to, Time time) {
             return new Call(direction, from, to, time);
         }
     }
@@ -53,6 +82,12 @@ public final class Model {
     public record Input(List<Call> calls, Floor start, int numberOfFloors) {
         public static Input of(Call... calls) {
             return new Input(Arrays.asList(calls), GROUND_FLOOR, DEFAULT_NUMBER_OF_FLOORS);
+        }
+    }
+
+    public record FloorTime(Floor floor, Time time) {
+        public static FloorTime of(Floor floor, Time time) {
+            return new FloorTime(floor, time);
         }
     }
 }

@@ -13,3 +13,21 @@ The input also consists of the floor where the elevator starts (usually the grou
 Every level includes a solution implementation in the class `SecretSolutions`, but is formatted as a sequence of unicode escape sequences. This is valid Java code, but of course quite unreadable, so it won't give away the answer!
 
 The model classes have some convenience methods that you are encouraged to use, so it pays off to take a look at them. However, you should not modify these classes.
+
+## Levels
+
+These levels are currently implemented:
+
+- In level 1, the elevator is very unintelligent and services each call sequentially.
+- In level 2, the elevator becomes a little smarter: it picks up new passengers en route to its destination.
+- In level 3, a time component is introduced to the system. Not every call is made at the same time, and it takes time to move from one floor to another.
+
+Ideas for new levels:
+
+- Consider maximum number of passengers that can be in the elevator at the same time
+- Attempt to minimize transit time for each passenger
+- Add energy efficiency concerns to the algorithm
+- Have multiple elevators in the system that operate independently
+- Have multiple elevators that coordinate with each other
+- Handle peak times
+- Handle the case when an elevator goes out of service
